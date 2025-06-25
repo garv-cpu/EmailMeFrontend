@@ -39,19 +39,19 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6 font-sans transition-all">
+    <div className="min-h-screen bg-black text-white p-6 font-sans transition-all">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-xl mx-auto bg-gray-800 shadow-2xl rounded-2xl p-6 space-y-6"
+        className="max-w-xl mx-auto bg-black shadow-2xl rounded-2xl p-6 space-y-6 border border-white"
       >
-        <h1 className="text-3xl font-bold text-center text-cyan-400">EmailMe!</h1>
+        <h1 className="text-3xl font-bold text-center text-white">EmailMe!</h1>
 
         <div className="space-y-2">
           <label className="block font-semibold">Select Email Type</label>
           <select
-            className="w-full bg-gray-700 border border-gray-600 px-4 py-2 rounded-lg text-white"
+            className="w-full bg-black border border-white px-4 py-2 rounded-lg text-white"
             value={type}
             onChange={(e) => setType(e.target.value)}
           >
@@ -64,7 +64,7 @@ export default function App() {
         <div className="space-y-2">
           <label className="block font-semibold">Enter the Context</label>
           <textarea
-            className="w-full bg-gray-700 border border-gray-600 px-4 py-2 rounded-lg text-white"
+            className="w-full bg-black border border-white px-4 py-2 rounded-lg text-white"
             rows="4"
             placeholder="e.g. Apologize to a customer for delay in delivery"
             value={context}
@@ -75,8 +75,8 @@ export default function App() {
         <button
           className={`w-full py-2 rounded-lg transition-all font-semibold ${
             loading
-              ? "bg-gray-600 cursor-not-allowed"
-              : "bg-cyan-500 hover:bg-cyan-600"
+              ? "bg-white text-black cursor-not-allowed"
+              : "bg-white text-black hover:opacity-80"
           }`}
           onClick={handleGenerate}
           disabled={loading}
@@ -89,7 +89,7 @@ export default function App() {
               transition={{ repeat: Infinity, duration: 0.6 }}
             >
               <svg
-                className="animate-spin h-5 w-5 text-white"
+                className="animate-spin h-5 w-5 text-black"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -121,9 +121,9 @@ export default function App() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="bg-gray-700 p-4 rounded-lg border border-gray-600 text-sm whitespace-pre-wrap"
+              className="bg-black p-4 rounded-lg border border-white text-sm whitespace-pre-wrap"
             >
-              <h2 className="font-semibold mb-2 text-cyan-300">Generated Email:</h2>
+              <h2 className="font-semibold mb-2 text-white">Generated Email:</h2>
               <p>{response}</p>
             </motion.div>
           )}
